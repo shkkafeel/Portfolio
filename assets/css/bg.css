@@ -1,17 +1,19 @@
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .slideshow-container {
     position: relative;
     width: 100%;
-    height: 100vh; /* Full height */
+    height: 100vh;
+    /* Full height */
 }
 
 .mySlides {
-    display: none; /* Hide slides by default */
+    display: none;
+    /* Hide slides by default */
     position: absolute;
     top: 0;
     left: 0;
@@ -22,14 +24,101 @@ body {
 .mySlides img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Cover the entire container */
-}
-
-.indexContent{
-    align-items: center;
-    width: 70%;
+    object-fit: cover;
+    /* Cover the entire container */
 }
 
 .indexContent h2 {
     font-size: 2.5rem;
+}
+
+.rightEffect {
+    animation-name: leftToRight;
+    animation-duration: .5s;
+    /* corrected here */
+    transition: all 1.3s ease-in-out;
+}
+
+.indexContent {
+    align-items: center;
+    width: 70%;
+    animation-name: colorChange;
+    animation-duration: 5s;
+    /* animation-iteration-count: infinite; */
+    transition: all 5s ease;
+}
+
+/* .navmenu li:hover .navicon {
+    color: rgb(255, 230, 0) !important;
+    
+}
+
+.navmenu .active .navicon {
+    color: rgb(255, 230, 0) !important;
+    
+}
+
+.social-links a:hover  {
+    background-color: rgb(255, 230, 0) !important;
+}
+.header-toggle{
+    background-color: rgb(255, 230, 0)  !important;
+} */
+
+/* .header-toggle{
+    backdrop-filter: blur(0%) !important;
+} */
+
+.glass{
+    background: #191919; /* Light transparent background */
+    /* backdrop-filter: blur(10px);   */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    color: black; /* Text color */
+    text-align: center;
+}
+
+
+
+@keyframes colorChange {
+    from {
+        opacity: 0;
+        /* rotate: 90deg; */
+    }
+
+    to {
+        opacity: 1;
+        /* rotate: 360deg; */
+    }
+}
+
+@keyframes leftToRight {
+
+    /* corrected spelling */
+    from {
+        transform: translateX(-100px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 500px) {
+
+    /* corrected media query */
+    .indexContent h2 {
+        font-size: 1.4rem;
+    }
+
+    .indexContent {
+        position: absolute;
+        top: -60px;
+    }
+
+    /* .header-toggle{
+        display: absolute;
+        top: 10px;
+        left: 100px;
+        border: 2px solid red;
+    } */
 }
